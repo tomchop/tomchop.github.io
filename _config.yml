@@ -1,0 +1,27 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+# relative_permalinks: true
+
+# Setup
+title:            tomchop
+tagline:          'APT-buster. Incident handler, lethal forensicator, wannabe malware reverser. Thoughts are my own.'
+url:              "http://tomchop.me"
+baseurl:          /
+email:            tomchop@gmail.com
+twitter_username: tomchop_
+github_username:  tomchop
+
+author:
+  name:           'Thomas Chopitea'
+  url:            https://twitter.com/tomchop_
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+gems: [jekyll-paginate]
