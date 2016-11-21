@@ -1,0 +1,48 @@
+#!/usr/bin/env python
+
+# TLP:AMBER
+
+# Volatility plugin to decrypt Locky configuration files
+# Report bugs to Thomas Chopitea (@tomchop_) / tomchop@gmail.com
+import yara
+
+import volatility.commands as commands
+import volatility.utils as utils
+import volatility.win32.tasks as tasks
+
+
+
+class LockyConfig(commands.Command):
+    """ Searches for Locky configs in memory"""
+
+    def __init__(self, config, *args):
+        commands.Command.__init__(self, config, *args)
+
+    def calculate(self):
+
+        # Load the address space
+        addr_space = utils.load_as(self._config)
+        # Compile yara signatures
+        signatures = {
+            'push_config': "rule push_config { strings: $p = { A1 ?? ?? ?? ?? 8B 40 08 85 C0 } condition: $p}",
+        }
+        rules = yara.compile(sources=signatures)
+
+        # get a task (process from the pslist utility)
+        ___
+            # iterate through all VADs
+            ___
+                if vad.Length > 8*1024*1024*1024:
+                    continue
+                # read the VAD content
+                ___
+                # match yara rules
+                matches = rules.match(data=data)
+                # profit !
+                if matches:
+                    match_offset = vad.Start + matches[0].strings[0][0] # See the Yara-python documentation for this
+                    offset = match_offset + 1 # The "??"s start one byte after 0xA1
+                    print "{}: match found at offset 0x{:x}!".format(task.ImageFileName, offset)
+
+    def render_text(self, outfd, data):
+        pass

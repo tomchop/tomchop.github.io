@@ -1,0 +1,103 @@
+#!/usr/bin/env python
+
+# TLP:AMBER
+
+# Volatility plugin to decrypt Locky configuration files
+# Report bugs to Thomas Chopitea (@tomchop_) / tomchop@gmail.com
+import struct
+
+import yara
+
+import volatility.commands as commands
+import volatility.utils as utils
+import volatility.win32.tasks as tasks
+import volatility.obj as obj
+
+
+def read_bytes(address, a, length=4):
+    return a.read(address, length)
+
+
+def deref(address, a, length=4):
+    try:
+        d = struct.unpack("<I", a.read(address, length))[0]
+        return d
+    except struct.error:
+        return None
+
+locky_config = {
+    "_LOCKY_CONFIG": [0x104B, {
+        'affiliate': [0x00, ['int']],
+        'dga_seed': [0x04, ['int']],
+        'sleep_time': [0x08, ['int']],
+        'svchost_persist': [0xC, ['char']],
+        'reg_persist': [0xD, ['char']],
+        'ignore_russian': [0xE, ['char']],
+        'url_format': [0x0F, ['String', dict(length=0x30)]],
+        'c2_servers': [0x3F, ['String', dict(length=0x1000)]],
+        'rsa_key_id': [0x103f, ['int']],
+        'rsa_key_size_bytes': [0x1043, ['int']],
+        'publickeystruc': [0x1047, ['int']],
+        'rsa_key': [0x104f, ['array', 1080, ['unsigned char']]],
+        'ransomnote': [0x1487 + 4 * 3, ['String', dict(length=0x1000)]],
+        'html_ransomnote': [0x2487 + 4 * 3, ['String', dict(length=0x3000)]],
+    }]
+}
+
+class LockyConfigDump(obj.ProfileModification):
+    conditions = {'os': lambda x: x == 'windows'}
+
+    def modification(self, profile):
+        profile.vtypes.update(locky_config)
+
+class LockyConfig(commands.Command):
+    """ Searches for Locky configs in memory"""
+
+    def __init__(self, config, *args):
+        commands.Command.__init__(self, config, *args)
+
+    def fetch_config(self, config_ptr):
+        pass
+
+    def calculate(self):
+
+        # Load the address space
+        addr_space = utils.load_as(self._config)
+        # Compile yara signatures
+        signatures = {
+            'push_config': "rule push_config { strings: $p = { A1 ?? ?? ?? ?? 8B 40 08 85 C0 } condition: $p}",
+        }
+        rules = yara.compile(sources=signatures)
+
+        # get a task (process from the pslist utility)
+        for task in tasks.pslist(addr_space):
+            # iterate through all VADs
+            for vad, process_space in task.get_vads():
+                if vad.Length > 8*1024*1024*1024:
+                    continue
+                # read the VAD content
+                data = process_space.zread(vad.Start, vad.Length)
+                # match yara rules
+                matches = rules.match(data=data)
+                # profit !
+                if matches:
+                    match_offset = vad.Start + matches[0].strings[0][0] # See the Yara-python documentation for this
+                    offset = match_offset + 1 # The "??"s start one byte after 0xA1
+                    print "{}: candidate found in offset 0x{:x}!".format(task.UniqueProcessId, offset)
+
+                    # dereference variable containing pointer
+                    config_ptr = deref(offset, process_space)
+                    if not config_ptr:
+                        continue
+                    print "Config pointer: 0x{:x}".format(config_ptr)
+
+                    # dereference pointer to config
+                    config_obj = deref(config_ptr, process_space)
+                    if not config_obj:
+                        continue
+                    print "Config address: 0x{:x}".format(config_obj)
+                    config = obj.Object('_LOCKY_CONFIG', offset=config_obj, vm=process_space)
+
+
+    def render_text(self, outfd, data):
+        pass
