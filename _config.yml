@@ -18,10 +18,3 @@ github_username:  tomchop
 author:
   name:           'Thomas Chopitea'
   url:            https://twitter.com/tomchop_
-
-paginate:         5
-
-# Custom vars
-version:          2.1.0
-
-gems: [jekyll-paginate]
