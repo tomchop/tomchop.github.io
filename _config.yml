@@ -10,7 +10,7 @@ permalink:        pretty
 title:            tomchop
 tagline:          'APT-buster. Incident handler, lethal forensicator, wannabe malware reverser. Thoughts are my own.'
 url:              "http://tomchop.me"
-baseurl:          /
+baseurl:          ""
 email:            tomchop@gmail.com
 twitter_username: tomchop_
 github_username:  tomchop
