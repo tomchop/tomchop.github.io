@@ -1,5 +1,5 @@
-baseurl      = "http://localhost"
-title        = "My Blog"
+baseurl      = "https://tomchop.me/"
+title        = "tomchop's blog"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
 paginate     = 10
@@ -11,7 +11,7 @@ paginate     = 10
   dateformNumTime = "2006-01-02 15:04"
 
   # Subtitle for home
-  homeSubtitle = "A simple and beautiful blog"
+  homeSubtitle = "tomchop's musings"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
@@ -20,9 +20,46 @@ paginate     = 10
   enableSharingButtons = true
 
   # Metadata mostly used in document's head
-  description = "My new homepage or blog"
+  description = "tomchop's musings"
   keywords = "homepage, blog"
   images = [""]
+
+  enableThemeToggle = true
+
+  [author]
+    name = "tomchop"
+
+  [params.footer]
+    trademark = false
+    rss = true
+    copyright = true
+    author = true
+
+    topText = []
+    bottomText = [
+      "Powered by Hugo"
+    ]
+
+  [params.portrait]
+    path     = "/img/avatar.png"
+    alt      = "Portrait"
+    maxWidth = "200px"
+
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/"
+
+  [[params.social]]
+    name = "email"
+    url  = "mailto:nobody@example.com"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/"
 
 [taxonomies]
     category = "blog"
@@ -31,15 +68,18 @@ paginate     = 10
 
 [languages]
   [languages.en]
-    title = "Hello Friend NG"
-    subtitle = "A simple theme for Hugo"
+    title = "DFIR musings"
+    subtitle = "simple musings"
     keywords = ""
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "hello friend ng"
+      logoMark     = ">"
+      logoText = " ~/"
       logoHomeLink = "/"
+      logoCursorPathname = true
+      logoCursorAnimate  = "4s"
     # or
     #
     # path = "/img/your-example-logo.svg"
@@ -47,6 +87,21 @@ paginate     = 10
 
   # And you can even create generic menu
   [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
+    identifier = "posts"
+    name       = "Posts"
     url        = "/posts"
+
+  [[menu.main]]
+    identifier = "about"
+    name       = "About"
+    url        = "/about"
+
+  [[menu.main]]
+    identifier = "projects"
+    name       = "Projects"
+    url        = "/projects"
+
+  [[menu.main]]
+    identifier = "talks"
+    name       = "Talks"
+    url        = "/talks"
