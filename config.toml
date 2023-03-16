@@ -46,20 +46,22 @@ paginate     = 10
     maxWidth = "200px"
 
   [[params.social]]
-    name = "twitter"
-    url  = "https://twitter.com/"
-
-  [[params.social]]
-    name = "email"
-    url  = "mailto:nobody@example.com"
-
-  [[params.social]]
     name = "github"
-    url  = "https://github.com/"
+    url  = "https://github.com/tomchop"
 
   [[params.social]]
-    name = "linkedin"
-    url  = "https://www.linkedin.com/"
+    name = "twitter"
+    url  = "https://twitter.com/tomchop_"
+
+  [[params.social]]
+    name = "mastodon"
+    url  = "https://infosec.exchange/tomchop"
+
+  [[params.social]]
+    name = "keybase"
+    url  = "https://keybase.io/tomchop"
+
+
 
 [taxonomies]
     category = "blog"
