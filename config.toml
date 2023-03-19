@@ -26,6 +26,8 @@ paginate     = 10
 
   enableThemeToggle = true
 
+  customCSS = ["/css/custom.css"]
+
   [author]
     name = "tomchop"
 
