@@ -1,0 +1,44 @@
+@font-face {
+font-family: 'Inconsolata';
+font-style: normal;
+font-weight: 200;
+font-stretch: normal;
+font-display: swap;
+src: url(/fonts/Inconsolata-ExtraLight.ttf) format('truetype');
+}
+@font-face {
+font-family: 'Inconsolata';
+font-style: normal;
+font-weight: 300;
+font-stretch: normal;
+font-display: swap;
+src: url(/fonts/Inconsolata-MediumLight.ttf) format('truetype');
+}
+@font-face {
+font-family: 'Inconsolata';
+font-style: normal;
+font-weight: 400;
+font-stretch: normal;
+font-display: swap;
+src: url(/fonts/Inconsolata-Regular.ttf) format('truetype');
+}
+
+.logo {
+    font-family: 'Inconsolata';
+}
+
+.posts-group {
+    margin-bottom: 10px;
+}
+
+.posts .post-item {
+    border-bottom: 0;
+}
+
+.posts .post-item a {
+    padding: 0;
+}
+
+.posts .post-year {
+    padding-top: 0;
+}
