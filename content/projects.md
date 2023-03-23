@@ -1,7 +1,7 @@
 ---
 title: "Projects"
-date: 2022-06-16T22:30:39+02:00
-draft: true
+date: 2023-03-23
+draft: false
 ---
 
 I enjoy building tools that help me solve the problems I run into during my
