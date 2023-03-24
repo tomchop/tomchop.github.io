@@ -51,7 +51,7 @@
 
   &-group {
     display: flex;
-    margin-bottom: 1.9em;
+    margin-bottom: 0.6em;
     line-height: normal;
 
     @media #{$media-size-tablet} {
@@ -73,7 +73,7 @@
     }
 
     &-year {
-      padding-top: 6px;
+      padding-top: 0;
       margin-right: 1.8em;
       font-size: 1.6em;
       @include dimmed;
@@ -84,14 +84,29 @@
     }
 
     &-item {
-      border-bottom: 1px grey dashed;
+
 
       a {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        padding: 12px 0;
+        padding: 0;
         text-decoration: none;
+        &:hover {
+          [data-theme=dark] & {
+            background-color: $dark-background-secondary;
+            padding: 0.1em;
+            margin: -0.1em;
+            border-radius: 0.2em;
+          }
+
+          [data-theme=light] & {
+            background-color: $light-background-secondary;
+            padding: 0.1em;
+            margin: -0.1em;
+            border-radius: 0.2em;
+          }
+        }
       }
     }
 
