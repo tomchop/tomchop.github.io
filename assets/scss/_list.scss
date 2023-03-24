@@ -9,6 +9,11 @@
     max-width: 660px;
   }
 
+  svg {
+    opacity: 0.5;
+    margin-right: 0.2em;
+  }
+
   &:not(:last-of-type) {
     // Default
     border-bottom: 1px solid $light-border-color;
