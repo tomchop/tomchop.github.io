@@ -7,7 +7,10 @@ draft: false
 I enjoy building tools that help me solve the problems I run into during my
 day-to-day job. Here's a list of FOSS I currently spend time contributing to:
 
-## ⚡️ Core projects
+## Core projects
+
+These are projects that I still maintain, and that take up most of my project
+time.
 
 ### Yeti platform
 
@@ -34,7 +37,7 @@ annotations, comments, tags and stars.
 
 GitHub: https://github.com/google/timesketch
 
-## 📦 Projects I've worked on in the past
+## Projects I've worked on in the past
 
 ### FIR - Fast Incident Response
 
