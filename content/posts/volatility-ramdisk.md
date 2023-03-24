@@ -25,7 +25,7 @@ anyways). If you are developing - and therefore testing - your own plugins,
 you'll have to run them every time, which can quickly become tedious if they
 take ≈3 minutes to run.
 
-### Ramdisks to the rescue
+## Ramdisks to the rescue
 
 Ramdisks are like any other mounted device, only they map a portion of your live
 memory to a directory on disk. It works just like any other device, only faster.
@@ -33,7 +33,7 @@ memory to a directory on disk. It works just like any other device, only faster.
 unmounted or if the workstation they're mounted on restarts, so make sure you
 save your progress on a physical disk.
 
-#### Mac OS X
+### Mac OS X
 
 Ramdisks are supported in Mac OS X natively. The following script was tested on
 Mavericks 10.9.4:
@@ -59,7 +59,7 @@ diskutil erasevolume HFS+ 'RAMDISK' `hdiutil attach -nomount ram://16777216`
 
 To unmount, just eject the disk as you would with any USB key.
 
-#### Linux
+### Linux
 
 The following was successfully tested on Ubuntu 14.04 LTS:
 
@@ -87,12 +87,12 @@ Unmount as any other device:
 umount /mnt/ramdisk
 ```
 
-#### Windows
+### Windows
 
 I haven't tested this, but a quick Google search gives the following utility:
 http://www.tekrevue.com/tip/create-10-gbs-ram-disk-windows/.
 
-### Speed gain
+## Speed gain
 
 The speed gain you might experience may vary according to your system
 configuration. I've had times when analysis carried out from a dump on a ramdisk
