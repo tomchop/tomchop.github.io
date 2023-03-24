@@ -26,19 +26,3 @@ src: url(/fonts/Inconsolata-Regular.ttf) format('truetype');
 .logo {
     font-family: 'Inconsolata';
 }
-
-.posts-group {
-    margin-bottom: 10px;
-}
-
-.posts .post-item {
-    border-bottom: 0;
-}
-
-.posts .post-item a {
-    padding: 0;
-}
-
-.posts .post-year {
-    padding-top: 0;
-}
