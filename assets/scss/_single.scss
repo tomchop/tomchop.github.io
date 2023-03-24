@@ -42,12 +42,6 @@
 
     h2 {
       padding-bottom: 0.7em;
-      [data-theme=dark] & {
-        border-bottom: 1px solid $darker-border-color;
-      }
-      [data-theme=light] & {
-        border-bottom: 1px solid $light-border-color;
-      }
     }
 
     h3 {
@@ -80,6 +74,10 @@
           border-radius: 0.2em;
         }
       }
+    }
+
+    svg.inline {
+      margin: -0.4em 0.4em;
     }
   }
 
