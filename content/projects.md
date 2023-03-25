@@ -3,6 +3,7 @@ title: "Projects"
 titleIcon: "coffee"
 date: 2023-03-23
 draft: false
+toc: true
 ---
 
 I enjoy building tools that help me solve the problems I run into during my
