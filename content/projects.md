@@ -1,5 +1,6 @@
 ---
 title: "Projects"
+titleIcon: "coffee"
 date: 2023-03-23
 draft: false
 ---
@@ -18,7 +19,7 @@ Your Everyday Threat Intelligence platform. Yeti is a free and open source TIP
 that is tailored to the needs of incident responders and detection engineers.
 Probably the project that is taking me the most time outside of work.
 
-{{< gh-icon "inline" >}} <https://github.com/yeti-platform/>
+{{< icon "github" >}} <https://github.com/yeti-platform/>
 
 
 ### dfTimewolf
@@ -27,7 +28,7 @@ dfTimewolf is a framework for automating digital forensics and incident
 response. Think CyberChef, but for APIs. It's a tool that allows you to chain
 together evidence collection, processing and analysis in a scalable way.
 
-{{< gh-icon "inline">}} <https://github.com/log2timeline/dftimewolf>
+{{< icon "github" >}} <https://github.com/log2timeline/dftimewolf>
 
 ### Timesketch
 
@@ -36,7 +37,7 @@ Using sketches you and your collaborators can easily organize your timelines and
 analyze them all at the same time. Add meaning to your raw data with rich
 annotations, comments, tags and stars.
 
-{{< gh-icon "inline">}} <https://github.com/google/timesketch>
+{{< icon "github" >}} <https://github.com/google/timesketch>
 
 ## Projects I've worked on in the past
 
@@ -46,7 +47,7 @@ This was my first stab at a project in the area of DFIR. FIR was built as a
 fast, simple ticketing system made by and for incident responders. I'm not an
 active contributor anymore, but the team behind it is still going strong.
 
-{{< gh-icon "inline">}} <https://github.com/certsocietegenerale/FIR>
+{{< icon "github" >}} <https://github.com/certsocietegenerale/FIR>
 
 ### volatility-autoruns plugin
 
@@ -57,7 +58,7 @@ autoruns basically automates most of the tasks you would need to run when trying
 to find out where malware is persisting from. Once all the autostart locations
 are found, they are matched with running processes in memory.
 
-{{< gh-icon "inline">}} <https://github.com/tomchop/>volatility-autoruns
+{{< icon "github" >}} <https://github.com/tomchop/volatility-autoruns>
 
 ### Malcom
 
@@ -66,7 +67,7 @@ graphical representations of network traffic, and cross-reference them with
 known malware sources. This comes handy when analyzing how certain malware
 species try to communicate with the outside world.
 
-{{< gh-icon "inline">}} <https://github.com/tomchop/malcom>
+{{< icon "github" >}} <https://github.com/tomchop/malcom>
 
 ### unXOR
 
@@ -75,4 +76,4 @@ unXOR is a small golang script that will search through an XOR-encoded file
 original keystream. Works on keys half as long as the known-plaintext, in linear
 complexity.
 
-{{< gh-icon "inline">}} <https://github.com/tomchop/unxor>
+{{< icon "github" >}} <https://github.com/tomchop/unxor>
