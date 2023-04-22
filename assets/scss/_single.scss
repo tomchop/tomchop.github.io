@@ -56,9 +56,11 @@
     a {
       [data-theme=dark] & {
         color: $dark-color-variant;
+        border-bottom: 1.5px solid $dark-color-variant;
       }
       [data-theme=light] & {
         color: $light-color-variant;
+        border-bottom: 1.5px solid $light-color-variant;
       }
 
       text-decoration: none;
@@ -66,17 +68,11 @@
 
       &:hover {
         [data-theme=dark] & {
-          background-color: $dark-background-secondary;
-          padding: 0.3em;
-          margin: -0.3em;
-          border-radius: 0.2em;
+          border-bottom: none
         }
 
         [data-theme=light] & {
-          background-color: $light-background-secondary;
-          padding: 0.3em;
-          margin: -0.3em;
-          border-radius: 0.2em;
+          border-bottom: none
         }
       }
     }
