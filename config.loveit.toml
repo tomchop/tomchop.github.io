@@ -14,7 +14,9 @@ languageName = "English"
 hasCJKLanguage = false
 
 # default amount of posts in each pages
-paginate = 12
+[pagination]
+  pagerSize = 12
+
 # google analytics code [UA-XXXXXXXX-X]
 googleAnalytics = ""
 # copyright description used only for seo schema
@@ -29,12 +31,6 @@ enableEmoji = true
 
 # ignore some build errors
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
-
-# Author config
-[author]
-  name = "tomchop"
-  email = ""
-  link = ""
 
 # Menu config
 [menu]
@@ -93,6 +89,11 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   description = "This is my cool site"
   # website images for Open Graph and Twitter Cards
   images = ["/logo.png"]
+
+  [params.author]
+    name = "tomchop"
+    email = ""
+    link = ""
 
   # Header config
   [params.header]
