@@ -2,7 +2,9 @@ baseurl      = "https://tomchop.me/"
 title        = "tomchop's blog"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
-paginate     = 10
+
+[pagination]
+  pagerSize = 10
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -28,7 +30,7 @@ paginate     = 10
 
   customCSS = ["/css/custom.css"]
 
-  [author]
+  [params.author]
     name = "tomchop"
 
   [params.footer]

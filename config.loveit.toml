@@ -14,9 +14,8 @@ languageName = "English"
 hasCJKLanguage = false
 
 # default amount of posts in each pages
-paginate = 12
-# google analytics code [UA-XXXXXXXX-X]
-googleAnalytics = ""
+[pagination]
+  pagerSize = 12
 # copyright description used only for seo schema
 copyright = ""
 
@@ -31,7 +30,7 @@ enableEmoji = true
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # Author config
-[author]
+[params.author]
   name = "tomchop"
   email = ""
   link = ""
