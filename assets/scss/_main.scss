@@ -334,12 +334,25 @@ ol ol {
   text-align: center;
 }
 
-.content {
+.content-center {
   display: flex;
   flex-direction: column;
   flex: 1 auto;
   align-items: center;
   justify-content: center;
+  margin: 0;
+
+  @media #{$media-size-phone} {
+    margin-top: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 auto;
+  align-items: center;
+  justify-content: start;
   margin: 0;
 
   @media #{$media-size-phone} {
